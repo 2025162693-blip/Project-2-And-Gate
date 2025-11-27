@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple AND Gate</title>
+</head>
+<body>
+
+<h2>AND Gate Demonstration</h2>
+
+<p>
+    <label><input type="checkbox" id="A"> Input A</label>
+</p>
+
+<p>
+    <label><input type="checkbox" id="B"> Input B</label>
+</p>
+
+<button onclick="runAND()">Run</button>
+
+<br><br>
+
+<img id="outputImage" src="and2off.png" alt="AND Gate Output" width="300">
+
+<script>
+function runAND() {
+
+    let A = document.getElementById("A").checked;
+    let B = document.getElementById("B").checked;
+
+    let outputImg = "and2off.png";
+
+    // AND gate logic using simple if-else
+    if (A && B) {
+        outputImg = "and2on.png";     // place your 1 AND 1 image here
+    } 
+    else if (!A && B) {
+        outputImg = "andoffon.png";     // place your 0 AND 1 image here
+    } 
+    else if (A && !B) {
+        outputImg = "andonoff.png";     // place your 1 AND 0 image here
+    } 
+    else {
+        outputImg = "and2off.png";     // place your 0 AND 0 image here
+    }
+
+    document.getElementById("outputImage").src = outputImg;
+}
+</script>
+
+</body>
+</html>
 
